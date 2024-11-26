@@ -110,9 +110,8 @@ exports.rateBook = (req, res) => {
       // Ajouter la note à l'array ratings du livre
       book.ratings.push(rating);
 
-      // Recalculer la note moyenne
+      // Recalculer la note moyenne et arrondit de la moyenne obtenue au nombre entier le plus proche
       book.averageRating = Math.round(
-        //arrondit de la moyenne obtenue au nombre entier le plus proche
         book.ratings.reduce((a, b) => a + b.grade, 0) / book.ratings.length
       );
 
