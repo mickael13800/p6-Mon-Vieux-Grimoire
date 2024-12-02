@@ -13,7 +13,7 @@ mongoose
 
 const app = express();
 
-app.use(express.urlencoded({ extended: true })); // parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true })); // autorisation postman
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

@@ -118,7 +118,7 @@ exports.rateBook = (req, res) => {
       // Sauvegarder le livre avec la nouvelle note
       book
         .save()
-        .then(() => res.status(200).json({ averageRating: book.averageRating }))
+        .then((updatedBook) => res.status(200).json(updatedBook))
         .catch((error) => res.status(404).json({ error }));
     })
     .catch((error) => res.status(500).json({ error }));
