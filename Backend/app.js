@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
@@ -6,9 +7,7 @@ const bookRoutes = require("./routes/book");
 const userRoutes = require("./routes/user");
 
 mongoose
-  .connect(
-    "mongodb+srv://OCRGrimoire:VieuxGrimoireP6@cluster.uykbx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster"
-  )
+  .connect(process.env.DB_URL)
   .then(() => console.log("Connexion à MongoDB réussie !"))
   .catch(() => console.log("Connexion à MongoDB échouée !"));
 
